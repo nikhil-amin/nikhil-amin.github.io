@@ -2140,6 +2140,16 @@ input, select, textarea {
 
 				}
 
+/*Artwork*/
+img.artwork {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img.artwork:hover{
+	transform: scale(1.05); 
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4), 0 12px 40px 0 rgba(0, 0, 0, 0.38);
+}
+
 /* Footer */
 
 	#footer {
