@@ -2160,6 +2160,10 @@ img.artwork:hover{
 	overflow-x: hidden; 
 }
 
+.padded {
+	padding: 20px;
+}
+
 /* Footer */
 
 	#footer {
