@@ -1,0 +1,189 @@
+(function($) {
+
+    // Initialize particles.js
+    particlesJS("particles-js", {
+        particles: {
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: "#0077ff"
+            },
+            shape: {
+                type: "circle",
+                stroke: {
+                    width: 0,
+                    color: "#000000"
+                },
+                polygon: {
+                    nb_sides: 5
+                }
+            },
+            opacity: {
+                value: 0.5,
+                random: false,
+                anim: {
+                    enable: false,
+                    speed: 1,
+                    opacity_min: 0.1,
+                    sync: false
+                }
+            },
+            size: {
+                value: 3,
+                random: true,
+                anim: {
+                    enable: false,
+                    speed: 40,
+                    size_min: 0.1,
+                    sync: false
+                }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: "#0077ff",
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: "none",
+                random: false,
+                straight: false,
+                out_mode: "out",
+                bounce: false,
+                attract: {
+                    enable: false,
+                    rotateX: 600,
+                    rotateY: 1200
+                }
+            }
+        },
+        interactivity: {
+            detect_on: "canvas",
+            events: {
+                onhover: {
+                    enable: true,
+                    mode: "grab"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 1
+                    }
+                },
+                bubble: {
+                    distance: 400,
+                    size: 40,
+                    duration: 2,
+                    opacity: 8,
+                    speed: 3
+                },
+                repulse: {
+                    distance: 200,
+                    duration: 0.4
+                },
+                push: {
+                    particles_nb: 4
+                },
+                remove: {
+                    particles_nb: 2
+                }
+            }
+        },
+        retina_detect: true
+    });
+
+    // Variables
+    var $window = $(window),
+        $body = $('body'),
+        $wrapper = $('#wrapper'),
+        $main = $('#main'),
+        $panels = $main.children('.panel'),
+        $nav = $('nav'),
+        $nav_links = $nav.find('a');
+
+    // Breakpoints
+    breakpoints({
+        xlarge: ['1281px', '1680px'],
+        large: ['981px', '1280px'],
+        medium: ['737px', '980px'],
+        small: ['481px', '736px'],
+        xsmall: [null, '480px']
+    });
+
+    // Play initial animations on page load
+    $window.on('load', function() {
+        window.setTimeout(function() {
+            $body.removeClass('is-preload');
+        }, 100);
+    });
+
+    // Nav
+    $nav_links.on('click', function(e) {
+        var $this = $(this),
+            href = $this.attr('href');
+
+        // Not a panel link? Bail.
+        if (href.charAt(0) != '#' || $panels.filter(href).length == 0)
+            return;
+
+        // Prevent default
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Deactivate all panels
+        $panels.removeClass('active');
+
+        // Activate target panel
+        $panels.filter(href).addClass('active');
+
+        // Update hash
+        window.location.hash = href;
+    });
+
+    // Initialize
+    (function() {
+        var $panel, $link;
+
+        // Get panel, link
+        if (window.location.hash) {
+            $panel = $panels.filter(window.location.hash);
+            $link = $nav_links.filter('[href="' + window.location.hash + '"]');
+        }
+
+        // No panel/link? Default to first
+        if (!$panel || $panel.length == 0) {
+            $panel = $panels.first();
+            $link = $nav_links.first();
+        }
+
+        // Activate initial panel
+        $panels.removeClass('active');
+        $panel.addClass('active');
+
+        // Reset scroll
+        $window.scrollTop(0);
+    })();
+
+    // Contact form handling
+    $('form').on('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your message! This is a demo form - in a real implementation, this would send your message to Nikhil.');
+        this.reset();
+    });
+
+})(jQuery);
