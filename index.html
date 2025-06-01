@@ -39,6 +39,7 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#artworks">Artworks</a></li>
+                    <li><a href="#blogs">Blogs</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -257,6 +258,23 @@
                 </div>
             </article>
 
+            <!-- Blogs -->
+            <article id="blogs" class="panel">
+                <header>
+                    <h2>What I’ve Been Writing</h2>
+                </header>
+                <p>I share my technical insights 🧠, adventures in coding 💻, and lessons learned from real-world projects 🚀.</p>
+                <div class="blogs-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="Java Adventures">Java Adventures</button>
+                    <button class="filter-btn" data-filter="AI & Cloud">AI & Cloud</button>
+                </div>
+                <div class="blogs-container" id="blogs-container">
+                    <!-- Blog cards will be loaded dynamically from JS -->
+                    <div class="loading">Loading blog articles...</div>
+                </div>
+            </article>
+
             <!-- Contact -->
             <article id="contact" class="panel">
                 <header>
@@ -332,6 +350,7 @@
     <script src="https://cdn.jsdelivr.net/gh/ajlkn/responsive-tools@master/dist/util.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/artworks.js"></script>
+    <script src="js/blogs.js"></script>
     <script src="js/main.js"></script>
 
 </body>
