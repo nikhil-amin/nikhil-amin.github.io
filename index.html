@@ -269,15 +269,15 @@
                         </div>
                     </div>
                     <div class="contact-form">
-                        <form method="post" action="#">
+                        <form id="contact-form">
                             <div class="fields">
                                 <div class="field half">
                                     <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" required />
+                                    <input type="text" name="from_name" id="name" required />
                                 </div>
                                 <div class="field half">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" required />
+                                    <input type="email" name="from_email" id="email" required />
                                 </div>
                                 <div class="field">
                                     <label for="subject">Subject</label>
@@ -289,7 +289,7 @@
                                 </div>
                             </div>
                             <div class="actions">
-                                <button type="submit" class="button primary">Send Message</button>
+                                <button type="submit" class="button primary" id="submit-btn">Send Message</button>
                             </div>
                         </form>
                     </div>
@@ -317,6 +317,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.1.0/jquery.browser.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ajlkn/responsive-tools@master/dist/breakpoints.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/ajlkn/responsive-tools@master/dist/util.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="js/main.js"></script>
 
 </body>

@@ -201,11 +201,31 @@
         window.location.hash = href;
     });
 
-    // Contact form handling
-    $('form').on('submit', function(e) {
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("sYK5LQt35V27nbJ4D"); // Changed to use the public key instead of service ID
+    })();
+
+    // Contact form handling with EmailJS
+    $('#contact-form').on('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your message! This is a demo form - in a real implementation, this would send your message to Nikhil.');
-        this.reset();
+        
+        // Show sending indicator
+        $('#submit-btn').text('Sending...').prop('disabled', true);
+        
+        // Send the email using EmailJS
+        emailjs.sendForm('service_levktkk', 'template_cfx4et4', this) // Updated to use correct service ID
+            .then(function() {
+                // Success message
+                alert('Thank you for your message! I will get back to you soon.');
+                $('#contact-form')[0].reset();
+                $('#submit-btn').text('Send Message').prop('disabled', false);
+            }, function(error) {
+                // Error message
+                console.error('Email sending failed:', error);
+                alert('Sorry, there was an error sending your message. Please try again later.');
+                $('#submit-btn').text('Send Message').prop('disabled', false);
+            });
     });
 
 })(jQuery);
