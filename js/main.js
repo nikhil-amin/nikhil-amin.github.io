@@ -179,6 +179,28 @@
         $window.scrollTop(0);
     })();
 
+    // Fix for "Let's Connect" and "Learn More" buttons
+    $('.actions a').on('click', function(e) {
+        var href = $(this).attr('href');
+        
+        // Not a panel link? Bail.
+        if (href.charAt(0) != '#' || $panels.filter(href).length == 0)
+            return;
+            
+        // Prevent default
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Deactivate all panels
+        $panels.removeClass('active');
+        
+        // Activate target panel
+        $panels.filter(href).addClass('active');
+        
+        // Update hash
+        window.location.hash = href;
+    });
+
     // Contact form handling
     $('form').on('submit', function(e) {
         e.preventDefault();
