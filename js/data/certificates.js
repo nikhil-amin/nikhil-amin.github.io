@@ -23,6 +23,13 @@ window.certificatesData = {
         issueDate: "May 31, 2025",
         url: "https://www.cloudskillsboost.google/public_profiles/9fc853a1-b2fd-41c6-bc2c-1a6056320682/badges/16224412",
         description: "Learned to integrate Gemini models with Streamlit to create interactive, real-world generative AI applications."
+      },
+      {
+        title: "Inspect Rich Documents with Gemini Multimodality and Multimodal RAG",
+        issuer: "Google Cloud Skills Boost",
+        issueDate: "June 14, 2025",
+        url: "https://www.cloudskillsboost.google/public_profiles/9fc853a1-b2fd-41c6-bc2c-1a6056320682/badges/16485030",
+        description: "Learned to use Gemini in Vertex AI for multimodal prompts and build AI apps with document search using RAG."
       }
   ]
 };
