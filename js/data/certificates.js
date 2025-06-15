@@ -30,6 +30,13 @@ window.certificatesData = {
         issueDate: "June 14, 2025",
         url: "https://www.cloudskillsboost.google/public_profiles/9fc853a1-b2fd-41c6-bc2c-1a6056320682/badges/16485030",
         description: "Learned to use Gemini in Vertex AI for multimodal prompts and build AI apps with document search using RAG."
+      },
+      {
+        title: "Explore Generative AI with the Vertex AI Gemini API",
+        issuer: "Google Cloud Skills Boost",
+        issueDate: "June 15, 2025",
+        url: "https://www.cloudskillsboost.google/public_profiles/9fc853a1-b2fd-41c6-bc2c-1a6056320682/badges/16494209",
+        description: "Explored the capabilities of the Vertex AI Gemini API for generating text, images, and code using multimodal prompts."
       }
   ]
 };
