@@ -116,6 +116,18 @@ window.blogsData = {
         "url": "https://medium.com/@aminnikhil073/building-real-world-ai-applications-with-gemini-and-streamlit-my-journey-with-google-clouds-a430cae00866",
         "series": "AI & Cloud",
         "date": "2025-05-31"
+      },
+      {
+        "title": "Building Real-World AI Applications with Gemini: Multimodal RAG in Action",
+        "url": "https://medium.com/@aminnikhil073/building-real-world-ai-applications-with-gemini-and-imagen-multimodal-rag-in-action-2bc2e87c9966",
+        "series": "AI & Cloud",
+        "date": "2025-06-14"
+      },
+      {
+        "title": "Exploring Generative AI with the Gemini API in Vertex AI — My Experience with Google Cloud’s Skill Badge",
+        "url": "https://medium.com/@aminnikhil073/exploring-generative-ai-with-the-gemini-api-in-vertex-ai-my-experience-with-google-clouds-skill-553481ac1e08",
+        "series": "AI & Cloud",
+        "date": "2025-06-15"
       }
   ]
 };
