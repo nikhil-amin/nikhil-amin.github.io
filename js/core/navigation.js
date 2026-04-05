@@ -28,6 +28,10 @@
         // Activate target panel
         $panels.filter(href).addClass('active');
 
+        // Update nav link active state
+        $nav_links.removeClass('active');
+        $nav_links.filter('[href="' + href + '"]').addClass('active');
+
         // Set hash
         window.location.hash = href;
     }
@@ -44,6 +48,15 @@
         if (initialPanel.length > 0) {
             $panels.removeClass('active');
             initialPanel.addClass('active');
+            
+            $nav_links.removeClass('active');
+            $nav_links.filter('[href="' + window.location.hash + '"]').addClass('active');
+        }
+    } else {
+        // Set default active nav link if no hash is present
+        const defaultActive = $panels.filter('.active').attr('id');
+        if (defaultActive) {
+            $nav_links.filter('[href="#' + defaultActive + '"]').addClass('active');
         }
     }
 
