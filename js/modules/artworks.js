@@ -37,17 +37,8 @@
         });
     }
 
-    // Load artworks when the artworks panel becomes active
-    if ($nav_links) {
-        $nav_links.filter('[href="#artworks"]').on('click', function() {
-            setTimeout(loadArtworks, 500); // Slight delay to ensure panel is visible
-        });
-    }
-    
-    // Also load artworks if the hash is #artworks on page load
-    if(window.location.hash === '#artworks') {
-        setTimeout(loadArtworks, 500);
-    }
+    // Load artworks immediately on script execution
+    loadArtworks();
 
     // Export module functions
     window.artworksModule = {

@@ -56,27 +56,8 @@
         loadBlogs(filter);
     });
 
-    // Load blogs when the blogs panel becomes active
-    if ($nav_links) {
-        $nav_links.filter('[href="#blogs"]').on('click', function() {
-            setTimeout(() => {
-                loadBlogs();
-                // Reset filter buttons
-                $('.filter-btn[data-filter="all"]').addClass('active');
-                $('.filter-btn').not('[data-filter="all"]').removeClass('active');
-            }, 500); // Slight delay to ensure panel is visible
-        });
-    }
-    
-    // Also load blogs if the hash is #blogs on page load
-    if(window.location.hash === '#blogs') {
-        setTimeout(() => {
-            loadBlogs();
-            // Reset filter buttons
-            $('.filter-btn[data-filter="all"]').addClass('active');
-            $('.filter-btn').not('[data-filter="all"]').removeClass('active');
-        }, 500);
-    }
+    // Load blogs immediately on script execution
+    loadBlogs();
 
     // Export module functions
     window.blogsModule = {

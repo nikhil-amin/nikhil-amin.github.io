@@ -1,7 +1,7 @@
 /**
  * Certificates module
  */
-(function($) {
+(function ($) {
     // Get dependencies
     const { $nav_links } = window.navigation || {};
     const { formatDate } = window.utils || {};
@@ -10,18 +10,18 @@
     function loadCertificates() {
         const container = $('#certificates-container');
         container.empty(); // Clear loading message
-        
+
         // Ensure certificatesData is available
         if (!window.certificatesData || !window.certificatesData.certificates) {
             container.html('<p>Error loading certificates. Please try again later.</p>');
             return;
         }
-        
+
         // Sort certificates by issue date (newest first)
         const sortedCertificates = [...window.certificatesData.certificates].sort((a, b) => {
             return new Date(b.issueDate) - new Date(a.issueDate);
         });
-        
+
         // Create and append certificate cards to the container
         sortedCertificates.forEach(certificate => {
             const certificateCard = $(`
@@ -35,22 +35,13 @@
                     </div>
                 </div>
             `);
-            
+
             container.append(certificateCard);
         });
     }
-    
-    // Load certificates when the certificates panel becomes active
-    if ($nav_links) {
-        $nav_links.filter('[href="#certificates"]').on('click', function() {
-            setTimeout(loadCertificates, 500); // Slight delay to ensure panel is visible
-        });
-    }
-    
-    // Also load certificates if the hash is #certificates on page load
-    if(window.location.hash === '#certificates') {
-        setTimeout(loadCertificates, 500);
-    }
+
+    // Load certificates immediately on script execution
+    loadCertificates();
 
     // Export module functions
     window.certificatesModule = {
